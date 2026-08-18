@@ -1,0 +1,19 @@
+Factory Stories update
+
+NEW PAGE:
+stories/footwear-overstock-nike-supply-chain/index.html
+
+UPDATED:
+index.html
+sitemap.xml
+
+WHAT CHANGED:
+The previous Sponsored Slot / Featured Placement card on the homepage now opens the Factory Story:
+"Why Big Footwear Supply Chains Sometimes End Up With Too Much Product"
+
+The article includes 5 editorial images and clearly distinguishes:
+- Nike's public use of contract manufacturing
+- Nike's publicly reported excess-inventory issues
+- the separate question of whether any individual contract factory has rights to sell branded excess goods
+
+No sales link is attached to the Nike editorial story.
