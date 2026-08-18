@@ -3,6 +3,53 @@
 <title>Factory Drops | Factory Overstock & Clearance Finds</title><meta name="description" content="Discover factory overstock and clearance inventory from factories, suppliers and independent sellers. Factory Drops provides information; sellers handle transactions and after-sales support.">
 <link rel="canonical" href="https://factorydrops.com/">
 <link rel="stylesheet" href="/assets/style.css">
+
+<style>
+/* Merchant placement area */
+.merchant-hero{padding:28px 0 14px}
+.merchant-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:12px}
+.merchant-main,.merchant-tile,.merchant-banner{position:relative;overflow:hidden;border:3px solid #111;background:#ddd;text-decoration:none}
+.merchant-main{min-height:540px}
+.merchant-main img,.merchant-tile img,.merchant-banner img{width:100%;height:100%;object-fit:cover}
+.merchant-side{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.merchant-tile{min-height:264px}
+.merchant-main .overlay{padding:32px}
+.merchant-tile .overlay{padding:16px}
+.merchant-name{font-size:11px;font-weight:950;letter-spacing:.08em;color:var(--yellow);margin-bottom:7px}
+.merchant-main h1{max-width:850px;margin:0 0 12px;font-size:clamp(44px,6vw,76px);line-height:.9;letter-spacing:-.05em}
+.merchant-main p{max-width:660px;margin:0 0 18px;font-size:17px;font-weight:700}
+.merchant-tile strong{font-size:20px}
+.merchant-banners{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.merchant-banner{min-height:180px}
+.merchant-banner .overlay{padding:20px}
+.merchant-banner strong{font-size:25px}
+.slot-label{position:absolute;top:12px;left:12px;z-index:2;padding:6px 8px;background:#111;color:#fff;font-size:9px;font-weight:950;letter-spacing:.08em}
+.slot-label.featured{background:var(--yellow);color:#111}
+.story-section{padding:52px 0 5px}
+.story-grid-home{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.story-card-home{display:flex;flex-direction:column;border:3px solid #111;background:#fff;text-decoration:none;overflow:hidden}
+.story-card-home img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.story-card-copy{padding:16px;display:flex;flex-direction:column;flex:1}
+.story-card-type{font-size:10px;font-weight:950;letter-spacing:.07em;color:var(--orange2);margin-bottom:7px}
+.story-card-home h3{margin:0 0 10px;font-size:21px;line-height:1.16}
+.story-card-home p{margin:0 0 18px;color:#5f564f;font-size:13px;line-height:1.55}
+.story-card-link{margin-top:auto;font-size:11px;font-weight:950}
+@media(max-width:980px){
+ .merchant-grid{grid-template-columns:1fr}
+ .story-grid-home{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .merchant-main{min-height:470px}
+ .merchant-side{gap:7px}
+ .merchant-tile{min-height:210px}
+ .merchant-banners{grid-template-columns:1fr}
+ .merchant-banner{min-height:150px}
+ .story-grid-home{gap:7px}
+ .story-card-home h3{font-size:17px}
+ .story-card-copy{padding:11px}
+}
+</style>
+
 </head><body><div class="topbar">FACTORY OVERSTOCK · NEW PRODUCTS · NEW DROPS</div>
 <header class="header"><div class="header-inner">
 <a class="logo" href="/">FACTORY<span>DROPS</span></a>
@@ -17,41 +64,118 @@
 <a class="header-cta" href="/sell-with-us/">LIST A DROP</a>
 <button class="mobile-menu" aria-label="Menu">☰</button>
 </div></div></header>
-<section class="hero"><div class="wrap">
-<div class="hero-grid">
-<a class="hero-main" href="/drops/drop-001/"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1500&q=85" alt="Factory clearance fashion">
-<div class="overlay"><span class="tag">FEATURED FACTORY DROP</span>
-<h1>FACTORY OVERSTOCK. PRICED TO MOVE.</h1>
-<p>Discover changing clearance inventory from factories, suppliers and independent sellers — with the seller clearly identified before you leave Factory Drops.</p>
-<span class="btn">EXPLORE DROP #001 →</span></div></a>
-<div class="hero-side">
-<a class="tile" href="/drops/drop-001/"><img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=85"><div class="overlay"><strong>Women's Factory Finds</strong><small>Explore →</small></div></a>
-<a class="tile disabled-link" href="#"><img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=900&q=85"><div class="overlay"><strong>Sleepwear Drops</strong><small>Coming soon</small></div></a>
-<a class="tile disabled-link" href="#"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85"><div class="overlay"><strong>Under $20</strong><small>Coming soon</small></div></a>
-<a class="tile disabled-link" href="#"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=85"><div class="overlay"><strong>Just Dropped</strong><small>Coming soon</small></div></a>
-</div></div>
-<div class="strip"><div class="strip-grid">
-<div><b>01</b><span>FACTORY OVERSTOCK</span></div>
-<div><b>02</b><span>EXTRA PRODUCTION</span></div>
-<div><b>03</b><span>CLEARANCE INVENTORY</span></div>
-<div><b>04</b><span>INDEPENDENT SELLERS</span></div>
-</div></div></div></section>
 
-<section id="featured" class="section"><div class="wrap">
-<div class="section-head"><h2>Featured Drops</h2><p>Today the platform is starting small. As more sellers join, each card can represent a different seller, factory or clearance batch.</p></div>
-<div class="drop-grid">
-<a class="drop" href="/drops/drop-001/"><span class="sponsored">FEATURED</span><img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=85"><div class="drop-info"><span class="seller">FACTORY DROP #001</span><h3>Lace-Trim Sleep Dress</h3><div class="drop-bottom"><span>Clearance discovery</span><span>VIEW →</span></div></div></a>
-<a class="drop disabled-link" href="#"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85"><div class="drop-info"><span class="seller">OPEN SLOT</span><h3>Future Seller Drop</h3><div class="drop-bottom"><span>Coming soon</span><span>VIEW →</span></div></div></a>
-<a class="drop disabled-link" href="#"><img src="https://images.unsplash.com/photo-1542060748-10c28b62716f?auto=format&fit=crop&w=800&q=85"><div class="drop-info"><span class="seller">OPEN SLOT</span><h3>Future Factory Drop</h3><div class="drop-bottom"><span>Coming soon</span><span>VIEW →</span></div></div></a>
-<a class="drop" href="/stories/footwear-overstock-nike-supply-chain/">
-<span class="sponsored">FACTORY STORY</span>
-<img src="https://images.unsplash.com/photo-1580172275194-9d530aad3759?auto=format&fit=crop&fm=jpg&q=74&w=1200" alt="White athletic sneakers">
-<div class="drop-info">
-<span class="seller">INDUSTRY REPORT</span>
+<section class="merchant-hero"><div class="wrap">
+<div class="merchant-grid">
+
+<a class="merchant-main" href="/drops/drop-001/">
+<span class="slot-label featured">FEATURED SELLER</span>
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=85" alt="Featured factory clearance drop">
+<div class="overlay">
+<div class="merchant-name">FACTORY DROP #001</div>
+<h1>THIS WEEK'S FEATURED FACTORY DROP.</h1>
+<p>One larger position for the seller or clearance batch we want shoppers to notice first.</p>
+<span class="btn">EXPLORE DROP #001 →</span>
+</div>
+</a>
+
+<div class="merchant-side">
+<a class="merchant-tile disabled-link" href="#">
+<span class="slot-label">SELLER SLOT</span>
+<img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=84" alt="">
+<div class="overlay"><strong>Women's Factory Finds</strong><small>Future seller placement</small></div>
+</a>
+
+<a class="merchant-tile disabled-link" href="#">
+<span class="slot-label">SELLER SLOT</span>
+<img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=900&q=84" alt="">
+<div class="overlay"><strong>Sleepwear Drop</strong><small>Future seller placement</small></div>
+</a>
+
+<a class="merchant-tile disabled-link" href="#">
+<span class="slot-label">SELLER SLOT</span>
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=84" alt="">
+<div class="overlay"><strong>Under $20</strong><small>Future seller placement</small></div>
+</a>
+
+<a class="merchant-tile disabled-link" href="#">
+<span class="slot-label">SELLER SLOT</span>
+<img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=84" alt="">
+<div class="overlay"><strong>Just Dropped</strong><small>Future seller placement</small></div>
+</a>
+</div>
+</div>
+
+<div class="merchant-banners">
+<a class="merchant-banner disabled-link" href="#">
+<span class="slot-label">BANNER SLOT</span>
+<img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=82" alt="">
+<div class="overlay"><strong>Factory Clearance Banner</strong><small>Future seller / campaign placement</small></div>
+</a>
+
+<a class="merchant-banner disabled-link" href="#">
+<span class="slot-label">BANNER SLOT</span>
+<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=82" alt="">
+<div class="overlay"><strong>New Seller Spotlight</strong><small>Future seller / campaign placement</small></div>
+</a>
+</div>
+
+<div class="strip"><div class="strip-grid">
+<div><b>01</b><span>FEATURED SELLER</span></div>
+<div><b>02</b><span>FACTORY DROPS</span></div>
+<div><b>03</b><span>SELLER PLACEMENTS</span></div>
+<div><b>04</b><span>SPONSORED SLOTS</span></div>
+</div></div>
+</div></section>
+
+
+
+<section id="featured" class="story-section"><div class="wrap">
+<div class="section-head">
+<div><span class="kicker">FACTORY STORIES</span><h2>Stories, Guides & Industry Notes</h2></div>
+<p>Not every visit needs to begin with a product. These stories explain where clearance inventory comes from, how supply chains work, and what shoppers should know before following a seller link.</p>
+</div>
+
+<div class="story-grid-home">
+
+<a class="story-card-home" href="/stories/footwear-overstock-nike-supply-chain/">
+<img src="https://images.unsplash.com/photo-1580172275194-9d530aad3759?auto=format&fit=crop&w=1000&q=80" alt="Athletic footwear">
+<div class="story-card-copy">
+<span class="story-card-type">INDUSTRY REPORT</span>
 <h3>Why Big Footwear Supply Chains End Up With Excess Inventory</h3>
-<div class="drop-bottom"><span>Nike as a public example</span><span>READ →</span></div>
+<p>Nike as a public example of contract manufacturing, inventory complexity and the important difference between brand inventory and factory selling rights.</p>
+<span class="story-card-link">READ STORY →</span>
 </div></a>
+
+<a class="story-card-home" href="/stories/why-factories-produce-extra/">
+<img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=1000&q=80" alt="Apparel manufacturing and inventory">
+<div class="story-card-copy">
+<span class="story-card-type">FACTORY EXPLAINER</span>
+<h3>Why Do Factories Sometimes Produce More Than the Order?</h3>
+<p>Production tolerances, minimum material quantities, defect allowances and planning buffers can all leave usable units after an order is complete.</p>
+<span class="story-card-link">READ GUIDE →</span>
+</div></a>
+
+<a class="story-card-home" href="/stories/what-happens-when-orders-are-cancelled/">
+<img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1000&q=80" alt="Clothing inventory">
+<div class="story-card-copy">
+<span class="story-card-type">SUPPLY CHAIN GUIDE</span>
+<h3>What Happens When a Retail Order Is Cancelled?</h3>
+<p>If production has already begun, the buyer can disappear while the inventory remains. What happens next depends on contracts, branding and sales rights.</p>
+<span class="story-card-link">READ GUIDE →</span>
+</div></a>
+
+<a class="story-card-home" href="/stories/broken-size-runs-explained/">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80" alt="Clothing sizes and racks">
+<div class="story-card-copy">
+<span class="story-card-type">CLEARANCE 101</span>
+<h3>Why Broken Size Runs Become Hard to Sell</h3>
+<p>A product can be perfectly usable and still become awkward inventory when the most popular sizes are gone and only scattered quantities remain.</p>
+<span class="story-card-link">READ GUIDE →</span>
+</div></a>
+
 </div></div></section>
+
 
 <section class="section"><div class="wrap">
 <div class="section-head"><h2>What Factory Drops Does</h2><p>We help shoppers discover clearance opportunities while keeping seller responsibility visible.</p></div>

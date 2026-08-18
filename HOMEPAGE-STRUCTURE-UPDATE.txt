@@ -1,0 +1,26 @@
+Homepage restructuring update
+
+1. TOP AREA = MERCHANT PLACEMENTS
+- One large featured seller/drop slot on the left
+- Four smaller seller slots on the right
+- Two horizontal banner slots underneath
+- Empty seller/banner slots are clickable but intentionally inactive
+
+2. CONTENT AREA = FACTORY STORIES
+Four live editorial cards:
+- Nike footwear supply-chain / excess-inventory report
+- Why factories sometimes produce extra units
+- What happens when retail orders are cancelled
+- Why broken size runs become hard to sell
+
+NEW PAGES:
+stories/why-factories-produce-extra/
+stories/what-happens-when-orders-are-cancelled/
+stories/broken-size-runs-explained/
+
+The existing Nike story remains at:
+stories/footwear-overstock-nike-supply-chain/
+
+UPDATED:
+index.html
+sitemap.xml
