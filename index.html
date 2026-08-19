@@ -56,6 +56,34 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#111111">
+
+<style>
+/* Factory Drops V5: more warehouse / inventory character */
+.merchant-main img,
+.merchant-tile img,
+.merchant-banner img{
+  filter:saturate(.88) contrast(.98);
+}
+.merchant-main .overlay{
+  background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.06) 68%);
+}
+.merchant-tile .overlay,
+.merchant-banner .overlay{
+  background:linear-gradient(to top,rgba(0,0,0,.80),rgba(0,0,0,.03) 64%);
+}
+.slot-label{
+  border:1px solid rgba(255,255,255,.45);
+}
+.merchant-main,
+.merchant-tile,
+.merchant-banner{
+  background:#d9d0c4;
+}
+@media(max-width:600px){
+  .merchant-main h1{font-size:42px}
+}
+</style>
+
 </head><body><div class="topbar">FACTORY OVERSTOCK · NEW PRODUCTS · NEW DROPS</div>
 <header class="header"><div class="header-inner">
 <a class="logo" href="/">FACTORY<span>DROPS</span></a>
@@ -71,68 +99,92 @@
 <button class="mobile-menu" aria-label="Menu">☰</button>
 </div></div></header>
 
+
 <section class="merchant-hero"><div class="wrap">
 <div class="merchant-grid">
 
 <a class="merchant-main" href="/drops/drop-001/">
-<span class="slot-label featured">FEATURED SELLER</span>
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=85" alt="Featured factory clearance drop">
+<span class="slot-label featured">FEATURED FACTORY DROP</span>
+<img src="/assets/images/drop001-warehouse-flatlay.png" alt="Factory clearance dresses arranged with shipping boxes">
 <div class="overlay">
-<div class="merchant-name">FACTORY DROP #001</div>
-<h1>THIS WEEK'S FEATURED FACTORY DROP.</h1>
-<p>One larger position for the seller or clearance batch we want shoppers to notice first.</p>
+<div class="merchant-name">FACTORY DROP #001 · APPAREL CLEARANCE</div>
+<h1>REAL INVENTORY. REAL CLEARANCE.</h1>
+<p>A changing batch of factory and seller inventory — presented with the source, seller and clearance context made clear before you continue.</p>
 <span class="btn">EXPLORE DROP #001 →</span>
 </div>
 </a>
 
 <div class="merchant-side">
+
 <a class="merchant-tile disabled-link" href="#">
 <span class="slot-label">SELLER SLOT</span>
-<img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=84" alt="">
-<div class="overlay"><strong>Women's Factory Finds</strong><small>Future seller placement</small></div>
+<img src="https://images.unsplash.com/photo-1721937127582-ed331de95a04?auto=format&fit=crop&fm=jpg&q=72&w=1200" alt="Warehouse aisle with garment inventory and forklift">
+<div class="overlay">
+<strong>Warehouse Apparel Batch</strong>
+<small>Future seller placement</small>
+</div>
 </a>
 
 <a class="merchant-tile disabled-link" href="#">
 <span class="slot-label">SELLER SLOT</span>
-<img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=900&q=84" alt="">
-<div class="overlay"><strong>Sleepwear Drop</strong><small>Future seller placement</small></div>
+<img src="https://images.unsplash.com/photo-1741183395212-5237420ca763?auto=format&fit=crop&fm=jpg&q=72&w=1200" alt="Garment factory worker at sewing station">
+<div class="overlay">
+<strong>Production Extra</strong>
+<small>Future factory placement</small>
+</div>
 </a>
 
 <a class="merchant-tile disabled-link" href="#">
 <span class="slot-label">SELLER SLOT</span>
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=84" alt="">
-<div class="overlay"><strong>Under $20</strong><small>Future seller placement</small></div>
+<img src="https://images.unsplash.com/photo-1742553841144-c04c6db0df90?auto=format&fit=crop&fm=jpg&q=72&w=1200" alt="Garment factory worker organizing folded clothing">
+<div class="overlay">
+<strong>Mixed Size Run</strong>
+<small>Future clearance placement</small>
+</div>
 </a>
 
 <a class="merchant-tile disabled-link" href="#">
 <span class="slot-label">SELLER SLOT</span>
-<img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=84" alt="">
-<div class="overlay"><strong>Just Dropped</strong><small>Future seller placement</small></div>
+<img src="https://images.unsplash.com/photo-1603400521630-9f2de124b33b?auto=format&fit=crop&fm=jpg&q=72&w=1200" alt="Clothing racks and apparel inventory">
+<div class="overlay">
+<strong>New Inventory Batch</strong>
+<small>Future seller placement</small>
+</div>
 </a>
+
 </div>
 </div>
 
 <div class="merchant-banners">
+
 <a class="merchant-banner disabled-link" href="#">
 <span class="slot-label">BANNER SLOT</span>
-<img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=82" alt="">
-<div class="overlay"><strong>Factory Clearance Banner</strong><small>Future seller / campaign placement</small></div>
+<img src="https://images.unsplash.com/photo-1721937127582-ed331de95a04?auto=format&fit=crop&fm=jpg&q=70&w=1600" alt="Warehouse inventory aisle">
+<div class="overlay">
+<strong>Clearance Inventory From Real Warehouses</strong>
+<small>Future seller / campaign placement</small>
+</div>
 </a>
 
 <a class="merchant-banner disabled-link" href="#">
 <span class="slot-label">BANNER SLOT</span>
-<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=82" alt="">
-<div class="overlay"><strong>New Seller Spotlight</strong><small>Future seller / campaign placement</small></div>
+<img src="/assets/images/drop001-warehouse-flatlay.png" alt="Factory apparel batch with shipping boxes">
+<div class="overlay">
+<strong>From Production Floor to New Buyers</strong>
+<small>Future factory / campaign placement</small>
+</div>
 </a>
+
 </div>
 
 <div class="strip"><div class="strip-grid">
-<div><b>01</b><span>FEATURED SELLER</span></div>
-<div><b>02</b><span>FACTORY DROPS</span></div>
-<div><b>03</b><span>SELLER PLACEMENTS</span></div>
-<div><b>04</b><span>SPONSORED SLOTS</span></div>
+<div><b>01</b><span>FACTORY OVERSTOCK</span></div>
+<div><b>02</b><span>EXTRA PRODUCTION</span></div>
+<div><b>03</b><span>BROKEN SIZE RUNS</span></div>
+<div><b>04</b><span>CLEARANCE BATCHES</span></div>
 </div></div>
 </div></section>
+
 
 
 

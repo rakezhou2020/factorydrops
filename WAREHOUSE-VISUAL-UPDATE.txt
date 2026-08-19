@@ -1,0 +1,28 @@
+Factory Drops V5 — Warehouse / Inventory Visual Update
+
+WHAT CHANGED
+- Homepage structure is unchanged.
+- The merchant / Drop area now uses warehouse, production, garment handling and batch-inventory imagery instead of polished fashion editorial images.
+- Main featured image uses a local asset:
+  /assets/images/drop001-warehouse-flatlay.png
+- Seller-slot wording was changed from boutique-style categories to inventory language:
+  Warehouse Apparel Batch
+  Production Extra
+  Mixed Size Run
+  New Inventory Batch
+- Bottom strip now reinforces:
+  Factory Overstock
+  Extra Production
+  Broken Size Runs
+  Clearance Batches
+
+DESIGN RULE GOING FORWARD
+Merchant / Drop area:
+~70% real warehouse, stock, packaging, production, racks
+~30% product/model imagery
+
+Factory Stories:
+Can remain more editorial and polished.
+
+NOTE
+Three secondary placeholder images currently use Unsplash URLs. When you collect your own warehouse/factory videos or still images, replace those URLs with files inside /assets/images/.

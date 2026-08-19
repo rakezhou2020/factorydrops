@@ -1,0 +1,5 @@
+Drop #001 update
+
+Updated: drops/drop-001/index.html
+
+The page now keeps Factory Drops editorial content on top and adds a clear Seller Offer section below. The final button links directly to https://loapse.com/products/sienna-lace-trim-sleep-dress. Pricing and inventory are intentionally not hard-coded because they may change. Loapse is identified as the seller and responsible for payment, shipping, returns, refunds and customer support.
