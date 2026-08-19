@@ -1,0 +1,29 @@
+Factory Drops V6 homepage update
+
+MAIN CHANGES
+1. No specific product is promoted on the homepage.
+2. Drop #001 / dress imagery has been removed from the homepage.
+3. Homepage now introduces the platform and inventory problem first.
+4. No homepage image depends on an external image URL.
+5. All homepage images are stored locally under /assets/images/.
+6. Duplicate homepage imagery has been removed.
+7. Commercial/seller slots are positioned as future placement areas, not current products.
+
+NEW HOMEPAGE MESSAGE
+GOOD INVENTORY. WRONG CHANNEL.
+
+LOCAL HOMEPAGE ASSETS
+/assets/images/home-warehouse-hero.jpg
+/assets/images/home-warehouse-slot.jpg
+/assets/images/home-factory-worker.jpg
+/assets/images/home-inventory-batches.jpg
+/assets/images/home-factory-capacity.jpg
+/assets/images/home-seller-window.jpg
+/assets/images/home-supply-flow.jpg
+/assets/images/story-extra-production.jpg
+/assets/images/story-cancelled-orders.jpg
+/assets/images/story-broken-sizes.jpg
+/assets/images/story-supply-chain.jpg
+
+IMPORTANT
+The current homepage is platform-first. Individual products remain inside their Drop pages and do not define the homepage.

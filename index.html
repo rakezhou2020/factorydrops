@@ -84,6 +84,22 @@
 }
 </style>
 
+
+<style>
+/* V6 platform-first homepage */
+.platform-main{cursor:default}
+.platform-main .overlay{
+  background:linear-gradient(to top,rgba(0,0,0,.88),rgba(0,0,0,.10) 72%);
+}
+.merchant-main img,.merchant-tile img,.merchant-banner img{
+  filter:saturate(.82) contrast(.98);
+}
+.merchant-tile .overlay strong,
+.merchant-banner .overlay strong{
+  text-shadow:0 1px 3px rgba(0,0,0,.45);
+}
+</style>
+
 </head><body><div class="topbar">FACTORY OVERSTOCK · NEW PRODUCTS · NEW DROPS</div>
 <header class="header"><div class="header-inner">
 <a class="logo" href="/">FACTORY<span>DROPS</span></a>
@@ -100,78 +116,67 @@
 </div></div></header>
 
 
-<section class="merchant-hero"><div class="wrap">
-<div class="merchant-grid">
 
-<a class="merchant-main" href="/drops/drop-001/">
-<span class="slot-label featured">FEATURED FACTORY DROP</span>
-<img src="/assets/images/drop001-warehouse-flatlay.png" alt="Factory clearance dresses arranged with shipping boxes">
+<section class="merchant-hero"><div class="wrap">
+
+<div class="merchant-grid">
+<div class="merchant-main platform-main">
+<span class="slot-label featured">FACTORY DROPS NETWORK</span>
+<img src="/assets/images/home-hero-warehouse.jpg" alt="Warehouse inventory aisle">
 <div class="overlay">
-<div class="merchant-name">FACTORY DROP #001 · APPAREL CLEARANCE</div>
-<h1>REAL INVENTORY. REAL CLEARANCE.</h1>
-<p>A changing batch of factory and seller inventory — presented with the source, seller and clearance context made clear before you continue.</p>
-<span class="btn">EXPLORE DROP #001 →</span>
+<div class="merchant-name">FACTORY INVENTORY / CLEARANCE / DISCOVERY</div>
+<h1>GOOD INVENTORY.<br>WRONG CHANNEL.</h1>
+<p>Factory Drops follows the inventory that gets left behind when production, orders and demand stop lining up.</p>
+<a class="btn" href="/how-it-works/">HOW FACTORY DROPS WORKS →</a>
 </div>
-</a>
+</div>
 
 <div class="merchant-side">
 
-<a class="merchant-tile disabled-link" href="#">
-<span class="slot-label">SELLER SLOT</span>
-<img src="https://images.unsplash.com/photo-1721937127582-ed331de95a04?auto=format&fit=crop&fm=jpg&q=72&w=1200" alt="Warehouse aisle with garment inventory and forklift">
-<div class="overlay">
-<strong>Warehouse Apparel Batch</strong>
-<small>Future seller placement</small>
+<div class="merchant-tile">
+<span class="slot-label">INVENTORY</span>
+<img src="/assets/images/home-slot-01.jpg" alt="Industrial graphic about inventory batches">
+<div class="overlay"><strong>Inventory Batches</strong><small>Overstock & changing demand</small></div>
 </div>
-</a>
 
-<a class="merchant-tile disabled-link" href="#">
-<span class="slot-label">SELLER SLOT</span>
-<img src="https://images.unsplash.com/photo-1741183395212-5237420ca763?auto=format&fit=crop&fm=jpg&q=72&w=1200" alt="Garment factory worker at sewing station">
-<div class="overlay">
-<strong>Production Extra</strong>
-<small>Future factory placement</small>
+<div class="merchant-tile">
+<span class="slot-label">PRODUCTION</span>
+<img src="/assets/images/home-slot-02.jpg" alt="Garment production worker">
+<div class="overlay"><strong>Factory Capacity</strong><small>How extra inventory begins</small></div>
 </div>
-</a>
 
-<a class="merchant-tile disabled-link" href="#">
-<span class="slot-label">SELLER SLOT</span>
-<img src="https://images.unsplash.com/photo-1742553841144-c04c6db0df90?auto=format&fit=crop&fm=jpg&q=72&w=1200" alt="Garment factory worker organizing folded clothing">
-<div class="overlay">
-<strong>Mixed Size Run</strong>
-<small>Future clearance placement</small>
+<div class="merchant-tile">
+<span class="slot-label">WAREHOUSE</span>
+<img src="/assets/images/home-slot-03.jpg" alt="Warehouse aisle and stored inventory">
+<div class="overlay"><strong>Warehouse Reality</strong><small>Inventory waiting for a route out</small></div>
 </div>
-</a>
 
-<a class="merchant-tile disabled-link" href="#">
-<span class="slot-label">SELLER SLOT</span>
-<img src="https://images.unsplash.com/photo-1603400521630-9f2de124b33b?auto=format&fit=crop&fm=jpg&q=72&w=1200" alt="Clothing racks and apparel inventory">
-<div class="overlay">
-<strong>New Inventory Batch</strong>
-<small>Future seller placement</small>
+<div class="merchant-tile">
+<span class="slot-label">SELLERS</span>
+<img src="/assets/images/home-slot-04.jpg" alt="Industrial graphic representing future seller placements">
+<div class="overlay"><strong>Seller Windows</strong><small>Future verified placements</small></div>
 </div>
-</a>
 
 </div>
 </div>
 
 <div class="merchant-banners">
 
-<a class="merchant-banner disabled-link" href="#">
-<span class="slot-label">BANNER SLOT</span>
-<img src="https://images.unsplash.com/photo-1721937127582-ed331de95a04?auto=format&fit=crop&fm=jpg&q=70&w=1600" alt="Warehouse inventory aisle">
+<a class="merchant-banner" href="/how-it-works/">
+<span class="slot-label">HOW IT WORKS</span>
+<img src="/assets/images/home-banner-01.jpg" alt="Industrial graphic showing supply flow">
 <div class="overlay">
-<strong>Clearance Inventory From Real Warehouses</strong>
-<small>Future seller / campaign placement</small>
+<strong>From Excess Inventory to New Buyers</strong>
+<small>See how Factory Drops connects changing supply with demand.</small>
 </div>
 </a>
 
-<a class="merchant-banner disabled-link" href="#">
-<span class="slot-label">BANNER SLOT</span>
-<img src="/assets/images/drop001-warehouse-flatlay.png" alt="Factory apparel batch with shipping boxes">
+<a class="merchant-banner" href="/factory-stories/">
+<span class="slot-label">FACTORY STORIES</span>
+<img src="/assets/images/home-banner-02.jpg" alt="Industrial graphic about factory capacity">
 <div class="overlay">
-<strong>From Production Floor to New Buyers</strong>
-<small>Future factory / campaign placement</small>
+<strong>Why Does Good Inventory Get Left Behind?</strong>
+<small>Read the stories behind overproduction, cancellations and clearance.</small>
 </div>
 </a>
 
@@ -180,10 +185,12 @@
 <div class="strip"><div class="strip-grid">
 <div><b>01</b><span>FACTORY OVERSTOCK</span></div>
 <div><b>02</b><span>EXTRA PRODUCTION</span></div>
-<div><b>03</b><span>BROKEN SIZE RUNS</span></div>
+<div><b>03</b><span>CANCELLED ORDERS</span></div>
 <div><b>04</b><span>CLEARANCE BATCHES</span></div>
 </div></div>
+
 </div></section>
+
 
 
 
@@ -197,7 +204,7 @@
 <div class="story-grid-home">
 
 <a class="story-card-home" href="/stories/footwear-overstock-nike-supply-chain/">
-<img src="https://images.unsplash.com/photo-1580172275194-9d530aad3759?auto=format&fit=crop&w=1000&q=80" alt="Athletic footwear">
+<img src="/assets/images/story-extra-production.jpg" alt="Athletic footwear">
 <div class="story-card-copy">
 <span class="story-card-type">INDUSTRY REPORT</span>
 <h3>Why Big Footwear Supply Chains End Up With Excess Inventory</h3>
@@ -206,7 +213,7 @@
 </div></a>
 
 <a class="story-card-home" href="/stories/why-factories-produce-extra/">
-<img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=1000&q=80" alt="Apparel manufacturing and inventory">
+<img src="/assets/images/story-cancelled-orders.jpg" alt="Apparel manufacturing and inventory">
 <div class="story-card-copy">
 <span class="story-card-type">FACTORY EXPLAINER</span>
 <h3>Why Do Factories Sometimes Produce More Than the Order?</h3>
@@ -215,7 +222,7 @@
 </div></a>
 
 <a class="story-card-home" href="/stories/what-happens-when-orders-are-cancelled/">
-<img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1000&q=80" alt="Clothing inventory">
+<img src="/assets/images/story-broken-sizes.jpg" alt="Clothing inventory">
 <div class="story-card-copy">
 <span class="story-card-type">SUPPLY CHAIN GUIDE</span>
 <h3>What Happens When a Retail Order Is Cancelled?</h3>
@@ -224,7 +231,7 @@
 </div></a>
 
 <a class="story-card-home" href="/stories/broken-size-runs-explained/">
-<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80" alt="Clothing sizes and racks">
+<img src="/assets/images/story-supply-chain.jpg" alt="Clothing sizes and racks">
 <div class="story-card-copy">
 <span class="story-card-type">CLEARANCE 101</span>
 <h3>Why Broken Size Runs Become Hard to Sell</h3>

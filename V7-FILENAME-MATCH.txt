@@ -1,0 +1,11 @@
+Homepage image filenames matched to your local files:
+
+/assets/images/home-hero-warehouse.jpg
+/assets/images/home-slot-01.jpg
+/assets/images/home-slot-02.jpg
+/assets/images/home-slot-03.jpg
+/assets/images/home-slot-04.jpg
+/assets/images/home-banner-01.jpg
+/assets/images/home-banner-02.jpg
+
+Only index.html references were changed. Your actual images are not modified or replaced.
