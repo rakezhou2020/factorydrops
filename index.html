@@ -100,6 +100,328 @@
 }
 </style>
 
+
+<style>
+/* V9 - cleaner, easier-to-read homepage */
+.clean-home{padding-top:18px}
+.clean-home *{box-sizing:border-box}
+
+.clean-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.42fr) minmax(330px,.58fr);
+  gap:16px;
+  align-items:stretch;
+}
+
+.clean-main,
+.clean-tile,
+.clean-banner{
+  border:2px solid #111;
+  background:#fff;
+  overflow:hidden;
+}
+
+.clean-main{
+  display:grid;
+  grid-template-rows:minmax(410px,1fr) auto;
+}
+
+.clean-main-image{
+  position:relative;
+  min-height:510px;
+  overflow:hidden;
+  background:#ddd;
+}
+
+.clean-main-image img,
+.clean-tile img,
+.clean-banner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:saturate(.86) contrast(.97);
+}
+
+.clean-main-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.70) 0%,rgba(0,0,0,.12) 54%,rgba(0,0,0,.02) 100%);
+  pointer-events:none;
+}
+
+.clean-hero-title{
+  position:absolute;
+  z-index:2;
+  left:28px;
+  right:28px;
+  bottom:25px;
+  color:#fff;
+}
+
+.clean-hero-title span{
+  display:block;
+  margin-bottom:8px;
+  color:var(--yellow);
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.09em;
+}
+
+.clean-hero-title h1{
+  margin:0;
+  max-width:760px;
+  font-size:clamp(42px,5vw,70px);
+  line-height:.92;
+  letter-spacing:-.05em;
+}
+
+.clean-main-copy{
+  display:flex;
+  gap:22px;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px 22px;
+  background:#f7f1e8;
+}
+
+.clean-main-copy p{
+  max-width:620px;
+  margin:0;
+  color:#403b36;
+  font-size:15px;
+  line-height:1.55;
+  font-weight:650;
+}
+
+.clean-main-copy .btn{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+.clean-side{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.clean-tile{
+  display:grid;
+  grid-template-rows:minmax(155px,1fr) auto;
+  min-height:0;
+}
+
+.clean-tile img{
+  min-height:180px;
+  aspect-ratio:4/3;
+}
+
+.clean-tile-copy{
+  padding:13px 14px 15px;
+  background:#fff;
+  color:#111;
+}
+
+.clean-tile-copy span,
+.clean-banner-copy span{
+  display:block;
+  margin-bottom:5px;
+  color:var(--orange2);
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.09em;
+}
+
+.clean-tile-copy strong{
+  display:block;
+  margin-bottom:4px;
+  font-size:18px;
+  line-height:1.08;
+}
+
+.clean-tile-copy small{
+  display:block;
+  color:#696058;
+  font-size:11px;
+  line-height:1.35;
+}
+
+.clean-banners{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:16px;
+}
+
+.clean-banner{
+  display:grid;
+  grid-template-columns:53% 47%;
+  min-height:230px;
+  color:#111;
+  text-decoration:none;
+}
+
+.clean-banner img{
+  min-height:230px;
+}
+
+.clean-banner-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:24px;
+  background:#f7f1e8;
+}
+
+.clean-banner-copy strong{
+  display:block;
+  margin-bottom:10px;
+  font-size:25px;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.clean-banner-copy p{
+  margin:0 0 16px;
+  color:#5c554e;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.clean-banner-copy b{
+  margin-top:auto;
+  font-size:10px;
+  letter-spacing:.06em;
+}
+
+.clean-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin-top:16px;
+  border:2px solid #111;
+  background:#f7f1e8;
+}
+
+.clean-strip div{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:14px 16px;
+  border-right:1px solid #b7aa9b;
+}
+
+.clean-strip div:last-child{border-right:0}
+
+.clean-strip b{
+  color:var(--orange2);
+  font-size:12px;
+}
+
+.clean-strip span{
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.06em;
+}
+
+/* Give the next section more breathing room */
+.clean-home + .story-section{padding-top:66px}
+
+@media(max-width:980px){
+  .clean-grid{grid-template-columns:1fr}
+  .clean-main-image{min-height:500px}
+  .clean-side{grid-template-columns:repeat(4,1fr)}
+  .clean-tile img{min-height:130px}
+  .clean-banners{grid-template-columns:1fr}
+}
+
+@media(max-width:760px){
+  .clean-home{padding-top:10px}
+  .clean-grid,.clean-side,.clean-banners{gap:10px}
+  .clean-main{grid-template-rows:auto auto}
+  .clean-main-image{min-height:520px}
+  .clean-hero-title{left:20px;right:20px;bottom:22px}
+  .clean-hero-title span{
+    max-width:260px;
+    font-size:10px;
+    line-height:1.4;
+  }
+  .clean-hero-title h1{
+    max-width:390px;
+    font-size:46px;
+    line-height:.94;
+  }
+  .clean-main-copy{
+    display:block;
+    padding:18px;
+  }
+  .clean-main-copy p{
+    margin-bottom:16px;
+    font-size:14px;
+  }
+  .clean-main-copy .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .clean-side{
+    grid-template-columns:1fr 1fr;
+  }
+  .clean-tile{
+    grid-template-rows:auto auto;
+  }
+  .clean-tile img{
+    aspect-ratio:1/1;
+    min-height:0;
+  }
+  .clean-tile-copy{
+    padding:11px 11px 12px;
+  }
+  .clean-tile-copy strong{
+    font-size:16px;
+  }
+  .clean-tile-copy small{
+    font-size:10px;
+  }
+
+  .clean-banner{
+    grid-template-columns:1fr;
+    min-height:0;
+  }
+  .clean-banner img{
+    min-height:0;
+    aspect-ratio:16/9;
+  }
+  .clean-banner-copy{
+    padding:17px;
+  }
+  .clean-banner-copy strong{
+    font-size:21px;
+  }
+
+  .clean-strip{
+    grid-template-columns:1fr 1fr;
+  }
+  .clean-strip div{
+    border-bottom:1px solid #b7aa9b;
+  }
+  .clean-strip div:nth-child(2){
+    border-right:0;
+  }
+  .clean-strip div:nth-child(3),
+  .clean-strip div:nth-child(4){
+    border-bottom:0;
+  }
+}
+
+@media(max-width:420px){
+  .clean-main-image{min-height:470px}
+  .clean-hero-title h1{font-size:40px}
+  .clean-side{grid-template-columns:1fr 1fr}
+  .clean-strip span{font-size:8px}
+}
+</style>
+
 </head><body><div class="topbar">FACTORY OVERSTOCK · NEW PRODUCTS · NEW DROPS</div>
 <header class="header"><div class="header-inner">
 <a class="logo" href="/">FACTORY<span>DROPS</span></a>
@@ -117,79 +439,99 @@
 
 
 
-<section class="merchant-hero"><div class="wrap">
 
-<div class="merchant-grid">
-<div class="merchant-main platform-main">
-<span class="slot-label featured">FACTORY DROPS NETWORK</span>
-<img src="/assets/images/home-hero-warehouse.jpg" alt="Warehouse inventory aisle">
-<div class="overlay">
-<div class="merchant-name">FACTORY INVENTORY / CLEARANCE / DISCOVERY</div>
-<h1>GOOD INVENTORY.<br>WRONG CHANNEL.</h1>
-<p>Factory Drops follows the inventory that gets left behind when production, orders and demand stop lining up.</p>
-<a class="btn" href="/how-it-works/">HOW FACTORY DROPS WORKS →</a>
+<section class="merchant-hero clean-home"><div class="wrap">
+
+<div class="merchant-grid clean-grid">
+
+<div class="merchant-main clean-main">
+  <div class="clean-main-image">
+    <img src="/assets/images/home-hero-warehouse.jpg" alt="Warehouse inventory aisle">
+    <div class="clean-hero-title">
+      <span>FACTORY INVENTORY · CLEARANCE · DISCOVERY</span>
+      <h1>GOOD INVENTORY.<br>WRONG CHANNEL.</h1>
+    </div>
+  </div>
+  <div class="clean-main-copy">
+    <p>Factory Drops follows the inventory that gets left behind when production, orders and demand stop lining up.</p>
+    <a class="btn" href="/how-it-works/">HOW FACTORY DROPS WORKS →</a>
+  </div>
+</div>
+
+<div class="merchant-side clean-side">
+
+  <div class="clean-tile">
+    <img src="/assets/images/home-slot-01.jpg" alt="Inventory batches">
+    <div class="clean-tile-copy">
+      <span>INVENTORY</span>
+      <strong>Inventory Batches</strong>
+      <small>Overstock & changing demand</small>
+    </div>
+  </div>
+
+  <div class="clean-tile">
+    <img src="/assets/images/home-slot-02.jpg" alt="Garment production">
+    <div class="clean-tile-copy">
+      <span>PRODUCTION</span>
+      <strong>Factory Capacity</strong>
+      <small>How extra inventory begins</small>
+    </div>
+  </div>
+
+  <div class="clean-tile">
+    <img src="/assets/images/home-slot-03.jpg" alt="Warehouse inventory">
+    <div class="clean-tile-copy">
+      <span>WAREHOUSE</span>
+      <strong>Warehouse Reality</strong>
+      <small>Inventory waiting for a route out</small>
+    </div>
+  </div>
+
+  <div class="clean-tile">
+    <img src="/assets/images/home-slot-04.jpg" alt="Seller opportunity">
+    <div class="clean-tile-copy">
+      <span>SELLERS</span>
+      <strong>Seller Windows</strong>
+      <small>Future verified placements</small>
+    </div>
+  </div>
+
 </div>
 </div>
 
-<div class="merchant-side">
+<div class="clean-banners">
 
-<div class="merchant-tile">
-<span class="slot-label">INVENTORY</span>
-<img src="/assets/images/home-slot-01.jpg" alt="Industrial graphic about inventory batches">
-<div class="overlay"><strong>Inventory Batches</strong><small>Overstock & changing demand</small></div>
-</div>
-
-<div class="merchant-tile">
-<span class="slot-label">PRODUCTION</span>
-<img src="/assets/images/home-slot-02.jpg" alt="Garment production worker">
-<div class="overlay"><strong>Factory Capacity</strong><small>How extra inventory begins</small></div>
-</div>
-
-<div class="merchant-tile">
-<span class="slot-label">WAREHOUSE</span>
-<img src="/assets/images/home-slot-03.jpg" alt="Warehouse aisle and stored inventory">
-<div class="overlay"><strong>Warehouse Reality</strong><small>Inventory waiting for a route out</small></div>
-</div>
-
-<div class="merchant-tile">
-<span class="slot-label">SELLERS</span>
-<img src="/assets/images/home-slot-04.jpg" alt="Industrial graphic representing future seller placements">
-<div class="overlay"><strong>Seller Windows</strong><small>Future verified placements</small></div>
-</div>
-
-</div>
-</div>
-
-<div class="merchant-banners">
-
-<a class="merchant-banner" href="/how-it-works/">
-<span class="slot-label">HOW IT WORKS</span>
-<img src="/assets/images/home-banner-01.jpg" alt="Industrial graphic showing supply flow">
-<div class="overlay">
-<strong>From Excess Inventory to New Buyers</strong>
-<small>See how Factory Drops connects changing supply with demand.</small>
-</div>
+<a class="clean-banner" href="/how-it-works/">
+  <img src="/assets/images/home-banner-01.jpg" alt="Factory production and excess inventory">
+  <div class="clean-banner-copy">
+    <span>HOW IT WORKS</span>
+    <strong>From Excess Inventory to New Buyers</strong>
+    <p>See how Factory Drops connects changing supply with demand.</p>
+    <b>LEARN HOW →</b>
+  </div>
 </a>
 
-<a class="merchant-banner" href="/factory-stories/">
-<span class="slot-label">FACTORY STORIES</span>
-<img src="/assets/images/home-banner-02.jpg" alt="Industrial graphic about factory capacity">
-<div class="overlay">
-<strong>Why Does Good Inventory Get Left Behind?</strong>
-<small>Read the stories behind overproduction, cancellations and clearance.</small>
-</div>
+<a class="clean-banner" href="/#featured">
+  <img src="/assets/images/home-banner-02.jpg" alt="Garment inventory">
+  <div class="clean-banner-copy">
+    <span>FACTORY STORIES</span>
+    <strong>Why Does Good Inventory Get Left Behind?</strong>
+    <p>Read the stories behind overproduction, cancellations and clearance.</p>
+    <b>READ STORIES →</b>
+  </div>
 </a>
 
 </div>
 
-<div class="strip"><div class="strip-grid">
-<div><b>01</b><span>FACTORY OVERSTOCK</span></div>
-<div><b>02</b><span>EXTRA PRODUCTION</span></div>
-<div><b>03</b><span>CANCELLED ORDERS</span></div>
-<div><b>04</b><span>CLEARANCE BATCHES</span></div>
-</div></div>
+<div class="clean-strip">
+  <div><b>01</b><span>FACTORY OVERSTOCK</span></div>
+  <div><b>02</b><span>EXTRA PRODUCTION</span></div>
+  <div><b>03</b><span>CANCELLED ORDERS</span></div>
+  <div><b>04</b><span>CLEARANCE BATCHES</span></div>
+</div>
 
 </div></section>
+
 
 
 
@@ -204,7 +546,7 @@
 <div class="story-grid-home">
 
 <a class="story-card-home" href="/stories/footwear-overstock-nike-supply-chain/">
-<img src="/assets/images/story-extra-production.jpg" alt="Athletic footwear">
+<img src="https://images.unsplash.com/photo-1580172275194-9d530aad3759?auto=format&fit=crop&w=1000&q=80" alt="Athletic footwear">
 <div class="story-card-copy">
 <span class="story-card-type">INDUSTRY REPORT</span>
 <h3>Why Big Footwear Supply Chains End Up With Excess Inventory</h3>
@@ -213,7 +555,7 @@
 </div></a>
 
 <a class="story-card-home" href="/stories/why-factories-produce-extra/">
-<img src="/assets/images/story-cancelled-orders.jpg" alt="Apparel manufacturing and inventory">
+<img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?auto=format&fit=crop&w=1000&q=80" alt="Apparel manufacturing and inventory">
 <div class="story-card-copy">
 <span class="story-card-type">FACTORY EXPLAINER</span>
 <h3>Why Do Factories Sometimes Produce More Than the Order?</h3>
@@ -222,7 +564,7 @@
 </div></a>
 
 <a class="story-card-home" href="/stories/what-happens-when-orders-are-cancelled/">
-<img src="/assets/images/story-broken-sizes.jpg" alt="Clothing inventory">
+<img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1000&q=80" alt="Clothing inventory">
 <div class="story-card-copy">
 <span class="story-card-type">SUPPLY CHAIN GUIDE</span>
 <h3>What Happens When a Retail Order Is Cancelled?</h3>
@@ -231,7 +573,7 @@
 </div></a>
 
 <a class="story-card-home" href="/stories/broken-size-runs-explained/">
-<img src="/assets/images/story-supply-chain.jpg" alt="Clothing sizes and racks">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80" alt="Clothing sizes and racks">
 <div class="story-card-copy">
 <span class="story-card-type">CLEARANCE 101</span>
 <h3>Why Broken Size Runs Become Hard to Sell</h3>

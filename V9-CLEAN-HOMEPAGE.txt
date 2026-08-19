@@ -1,0 +1,13 @@
+Factory Drops V9 - Cleaner homepage
+
+Images have NOT been changed.
+
+Layout changes:
+- Hero: image carries only the core title; description and CTA move to a separate cream panel.
+- Four small cards: image on top, clean text block below. No large overlay text.
+- Two banners: image + separate text panel instead of text over busy photos.
+- Bottom inventory strip changed from full orange to a quieter cream information strip.
+- Borders reduced to 2px and spacing increased.
+- Mobile typography reduced and cards simplified.
+
+This update only changes homepage presentation and keeps the existing image filenames.
