@@ -1,0 +1,11 @@
+{
+  "name": "Factory Drops",
+  "short_name": "Factory Drops",
+  "icons": [
+    {"src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ],
+  "theme_color": "#111111",
+  "background_color": "#f5efe7",
+  "display": "standalone"
+}
