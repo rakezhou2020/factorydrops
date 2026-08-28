@@ -204,9 +204,106 @@ async function createPayment(request, env) {
   });
 }
 
+
+function pickWebhookSummary(data) {
+  if (!data || typeof data !== 'object') return null;
+
+  return {
+    event: data.event ?? data.type ?? data.event_type ?? null,
+    payment_id:
+      data.payment_id ??
+      data.id ??
+      data.payment?.payment_id ??
+      data.payment?.id ??
+      null,
+    order_id:
+      data.order_id ??
+      data.merchant_order_id ??
+      data.payment?.order_id ??
+      data.payment?.merchant_order_id ??
+      null,
+    status:
+      data.status ??
+      data.payment_status ??
+      data.payment?.status ??
+      null,
+    amount:
+      data.amount ??
+      data.payment_amount ??
+      data.payment?.amount ??
+      data.payment?.payment_amount ??
+      null,
+    tx_hash:
+      data.tx_hash ??
+      data.transaction_hash ??
+      data.payment?.tx_hash ??
+      data.payment?.transaction_hash ??
+      null,
+  };
+}
+
+async function handleUsdtonpayWebhook(request) {
+  if (request.method === 'GET') {
+    return json({
+      ok: true,
+      endpoint: '/api/webhooks/usdtonpay',
+      mode: 'webhook-test-v1',
+      message: 'Endpoint is online. Send a POST webhook to test delivery.'
+    }, 200);
+  }
+
+  if (request.method !== 'POST') {
+    return json({ ok: false, error: 'Method not allowed.' }, 405);
+  }
+
+  const signature =
+    request.headers.get('x-usdtonpay-signature') ??
+    request.headers.get('X-USDTonPay-Signature');
+
+  const contentType = request.headers.get('content-type') || '';
+  const userAgent = request.headers.get('user-agent') || '';
+
+  let raw = '';
+  try {
+    raw = await request.text();
+  } catch (err) {
+    console.error('[FactoryDrops][Webhook] Failed to read body:', err);
+    return json({ ok: false, error: 'Unable to read webhook body.' }, 400);
+  }
+
+  let parsed = null;
+  try {
+    parsed = raw ? JSON.parse(raw) : null;
+  } catch {}
+
+  const summary = pickWebhookSummary(parsed);
+
+  console.log('[FactoryDrops][Webhook] USDTonPay webhook received:', JSON.stringify({
+    received_at: new Date().toISOString(),
+    signature_present: Boolean(signature),
+    signature_preview: signature ? `${signature.slice(0, 12)}...` : null,
+    content_type: contentType,
+    user_agent: userAgent,
+    summary,
+    raw_body: safeText(raw),
+  }));
+
+  return json({
+    ok: true,
+    received: true,
+    mode: 'webhook-test-v1',
+    signature_present: Boolean(signature),
+    summary,
+  }, 200);
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    if (url.pathname === '/api/webhooks/usdtonpay') {
+      return handleUsdtonpayWebhook(request);
+    }
 
     if (url.pathname === '/api/demo-shop/create-payment') {
       return createPayment(request, env);
