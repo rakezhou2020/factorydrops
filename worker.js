@@ -2,9 +2,9 @@ const USDTONPAY_ENDPOINT = 'https://usdtonpay.com/api/v1/payments';
 const DEBUG_USDTONPAY = true;
 
 const CATALOG = Object.freeze({
-  sienna: 29.99,
-  luna: 34.99,
-  aria: 39.99,
+  sienna: 0.50,
+  luna: 0.50,
+  aria: 0.50,
 });
 
 function json(data, status = 200) {
