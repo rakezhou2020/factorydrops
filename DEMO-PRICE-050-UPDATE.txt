@@ -1,0 +1,14 @@
+FactoryDrops Demo Shop temporary test pricing
+
+All three demo products are now $0.50 each.
+
+Updated:
+- demo-shop/index.html
+- demo-shop/products/sienna.html
+- demo-shop/products/luna.html
+- demo-shop/products/aria.html
+- demo-shop/assets/shop.js
+- worker.js
+
+This keeps the current USDTonPay Debug V4 Worker behavior.
+Both browser display pricing and server-side payment calculation use $0.50 per item.
