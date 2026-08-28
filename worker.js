@@ -1,7 +1,6 @@
 const USDTONPAY_ENDPOINT = 'https://usdtonpay.com/api/v1/payments';
+const DEBUG_USDTONPAY = true;
 
-// Demo Shop prices are authoritative on the server.
-// The browser never decides the amount sent to USDTonPay.
 const CATALOG = Object.freeze({
   sienna: 29.99,
   luna: 34.99,
@@ -47,22 +46,20 @@ function calculateAmount(items) {
   return (cents / 100).toFixed(2);
 }
 
-function safeUpstreamLog(text) {
+function safeText(text) {
   if (!text) return '';
   return String(text)
     .replace(/Bearer\s+[A-Za-z0-9._~+\/-]+/gi, 'Bearer [REDACTED]')
-    .slice(0, 1800);
+    .slice(0, 4000);
 }
 
 function validateHostedCheckoutUrl(value) {
   if (typeof value !== 'string' || !value) return null;
-
   try {
     const url = new URL(value, 'https://usdtonpay.com');
     const host = url.hostname.toLowerCase();
-    const allowedHost = host === 'usdtonpay.com' || host.endsWith('.usdtonpay.com');
-
-    if (url.protocol !== 'https:' || !allowedHost) return null;
+    const allowed = host === 'usdtonpay.com' || host.endsWith('.usdtonpay.com');
+    if (url.protocol !== 'https:' || !allowed) return null;
     return url.toString();
   } catch {
     return null;
@@ -76,8 +73,11 @@ async function createPayment(request, env) {
 
   const apiKey = env.USDTONPAY_API_KEY;
   if (!apiKey) {
-    console.error('[FactoryDrops] USDTONPAY_API_KEY is not configured.');
-    return json({ ok: false, error: 'Payment service is not configured.' }, 503);
+    return json({
+      ok: false,
+      error: 'Payment service is not configured.',
+      debug: { key_configured: false }
+    }, 503);
   }
 
   let input;
@@ -95,22 +95,10 @@ async function createPayment(request, env) {
   let amount;
   try {
     amount = calculateAmount(input?.items);
-  } catch (err) {
-    console.warn('[FactoryDrops] Rejected demo order:', orderId, err?.message || err);
+  } catch {
     return json({ ok: false, error: 'Invalid cart.' }, 400);
   }
 
-  // Round 1: local demo order state is payment_pending.
-  // Durable database persistence is intentionally not added yet.
-  const localOrder = {
-    order_id: orderId,
-    amount,
-    status: 'payment_pending',
-    created_at: new Date().toISOString(),
-  };
-  console.info('[FactoryDrops] Demo order created:', JSON.stringify(localOrder));
-
-  // Current USDTonPay create-payment contract used by this integration.
   const upstreamBody = {
     order_id: orderId,
     amount,
@@ -123,70 +111,96 @@ async function createPayment(request, env) {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        authorization: `Bearer ${apiKey}`,
-        accept: 'application/json',
+        'authorization': `Bearer ${apiKey}`,
+        'accept': 'application/json',
       },
       body: JSON.stringify(upstreamBody),
     });
   } catch (err) {
-    console.error('[FactoryDrops] USDTonPay network error:', err?.stack || err);
-    return json({ ok: false, error: 'Could not create payment. Please try again.' }, 502);
+    console.error('[FactoryDrops] USDTonPay network error', err);
+    return json({
+      ok: false,
+      error: 'USDTonPay network request failed.',
+      debug: {
+        stage: 'network',
+        endpoint: USDTONPAY_ENDPOINT,
+        request_body: upstreamBody,
+        message: String(err?.message || err),
+      }
+    }, 502);
   }
 
   const raw = await upstream.text();
+
   let data = null;
   try {
     data = raw ? JSON.parse(raw) : null;
-  } catch {
-    data = null;
-  }
+  } catch {}
+
+  console.log('[FactoryDrops] USDTonPay response', JSON.stringify({
+    upstream_status: upstream.status,
+    request_body: upstreamBody,
+    upstream_body: safeText(raw),
+  }));
 
   if (!upstream.ok) {
-    console.error(
-      '[FactoryDrops] USDTonPay create-payment failed:',
-      JSON.stringify({
-        status: upstream.status,
-        order_id: orderId,
-        response: safeUpstreamLog(raw),
-      }),
-    );
-    return json({ ok: false, error: 'Could not create payment. Please try again.' }, 502);
+    return json({
+      ok: false,
+      error: 'USDTonPay rejected the payment request.',
+      debug: {
+        upstream_status: upstream.status,
+        endpoint: USDTONPAY_ENDPOINT,
+        request_body: upstreamBody,
+        upstream_body: safeText(raw),
+      }
+    }, 502);
   }
 
-  const paymentId = data?.payment_id;
-  const paymentUrl = validateHostedCheckoutUrl(data?.payment_url);
+  const paymentId =
+    data?.payment_id ??
+    data?.id ??
+    data?.payment?.payment_id ??
+    data?.payment?.id ??
+    null;
 
-  if (typeof paymentId !== 'string' || !paymentId || !paymentUrl) {
-    console.error(
-      '[FactoryDrops] USDTonPay success response missing required fields:',
-      JSON.stringify({
-        status: upstream.status,
-        order_id: orderId,
-        response: safeUpstreamLog(raw),
-      }),
-    );
-    return json({ ok: false, error: 'Payment service returned an invalid response.' }, 502);
+  const rawCheckoutUrl =
+    data?.payment_url ??
+    data?.checkout_url ??
+    data?.hosted_checkout_url ??
+    data?.url ??
+    data?.payment?.payment_url ??
+    data?.payment?.checkout_url ??
+    null;
+
+  const paymentUrl = validateHostedCheckoutUrl(rawCheckoutUrl);
+
+  if (!paymentId || !paymentUrl) {
+    return json({
+      ok: false,
+      error: 'USDTonPay returned success but checkout fields were not recognized.',
+      debug: {
+        upstream_status: upstream.status,
+        endpoint: USDTONPAY_ENDPOINT,
+        request_body: upstreamBody,
+        upstream_body: safeText(raw),
+      }
+    }, 502);
   }
 
-  console.info(
-    '[FactoryDrops] USDTonPay payment created:',
-    JSON.stringify({
-      order_id: orderId,
-      payment_id: paymentId,
-      payment_amount: data?.payment_amount ?? null,
-      status: 'payment_pending',
-    }),
-  );
-
-  // Only non-sensitive fields required by the browser are returned.
   return json({
     ok: true,
     order_id: orderId,
     amount,
     status: 'payment_pending',
-    payment_id: paymentId,
-    payment_amount: data?.payment_amount ?? null,
+    payment_id: String(paymentId),
+    payment_amount: data?.payment_amount ?? data?.amount ?? null,
     payment_url: paymentUrl,
+    debug: {
+      upstream_status: upstream.status,
+      endpoint: USDTONPAY_ENDPOINT,
+      request_body: upstreamBody,
+      upstream_body: safeText(raw),
+    }
   });
 }
 
@@ -198,7 +212,15 @@ export default {
       return createPayment(request, env);
     }
 
-    // Everything else stays exactly like the existing static FactoryDrops site.
+    if (url.pathname === '/api/demo-shop/debug-config') {
+      return json({
+        ok: true,
+        usdtonpay_key_configured: Boolean(env.USDTONPAY_API_KEY),
+        endpoint: USDTONPAY_ENDPOINT,
+        debug: DEBUG_USDTONPAY,
+      });
+    }
+
     return env.ASSETS.fetch(request);
   },
 };
