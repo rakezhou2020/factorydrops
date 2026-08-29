@@ -297,6 +297,24 @@ async function handleUsdtonpayWebhook(request) {
   }, 200);
 }
 
+
+const GOOGLE_TAG_HTML = '<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-PKF23BXWYY"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag(\'js\', new Date());\n  gtag(\'config\', \'G-PKF23BXWYY\');\n</script>';
+
+function injectGoogleTag(response) {
+  const contentType = response.headers.get('content-type') || '';
+  if (!contentType.toLowerCase().includes('text/html')) {
+    return response;
+  }
+
+  return new HTMLRewriter()
+    .on('head', {
+      element(element) {
+        element.append(GOOGLE_TAG_HTML, { html: true });
+      }
+    })
+    .transform(response);
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -318,6 +336,7 @@ export default {
       });
     }
 
-    return env.ASSETS.fetch(request);
+    const assetResponse = await env.ASSETS.fetch(request);
+    return injectGoogleTag(assetResponse);
   },
 };
