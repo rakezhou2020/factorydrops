@@ -204,7 +204,6 @@ async function createPayment(request, env) {
   });
 }
 
-
 function pickWebhookSummary(data) {
   if (!data || typeof data !== 'object') return null;
 
@@ -297,8 +296,14 @@ async function handleUsdtonpayWebhook(request) {
   }, 200);
 }
 
-
-const GOOGLE_TAG_HTML = '<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-PKF23BXWYY"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag(\'js\', new Date());\n  gtag(\'config\', \'G-PKF23BXWYY\');\n</script>';
+const GOOGLE_TAG_HTML = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PKF23BXWYY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PKF23BXWYY');
+</script>`;
 
 function injectGoogleTag(response) {
   const contentType = response.headers.get('content-type') || '';
@@ -306,13 +311,22 @@ function injectGoogleTag(response) {
     return response;
   }
 
+  const headers = new Headers(response.headers);
+  headers.set('cache-control', 'no-store, no-cache, must-revalidate');
+
+  const uncachedResponse = new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+
   return new HTMLRewriter()
     .on('head', {
       element(element) {
-        element.append(GOOGLE_TAG_HTML, { html: true });
+        element.prepend(GOOGLE_TAG_HTML, { html: true });
       }
     })
-    .transform(response);
+    .transform(uncachedResponse);
 }
 
 export default {
