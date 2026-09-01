@@ -154,24 +154,24 @@ const HOME_STORE_HTML = `<div class="wrap">
   <div class="live-drop-head">
     <div>
       <span class="live-drop-kicker">FACTORY DROPS STORE</span>
-      <h2>Solid Color Hoodies — Clearance Batch</h2>
+      <h2>Hoodies — Limited Clearance Batch</h2>
     </div>
     <span class="live-drop-status">SHOP LIVE</span>
   </div>
   <div class="live-drop-card">
     <div class="live-drop-media">
-      <img src="https://banana-moon-clothing.co.uk/cdn/shop/files/0005-5171-box-hood-m-0c251efba6e741cd2bb480ea0ac2eb8c_add18f84-ad1e-4060-9096-60641eea120f.jpg?v=1775669899" alt="Factory Drops solid-color hoodie store">
+      <img src="/shop/assets/products/hoodie-black.svg" alt="Factory Drops hoodie store">
     </div>
     <div class="live-drop-copy">
-      <p class="live-drop-intro">While we continue onboarding qualified external sellers, Factory Drops is opening a small in-house inventory section. The first category is deliberately simple: plain solid-color hoodies with limited clearance quantities.</p>
+      <p class="live-drop-intro">While we continue onboarding qualified external sellers, Factory Drops is opening a small in-house inventory section. The current batch starts with five hoodie styles and limited clearance quantities.</p>
       <div class="live-drop-meta">
         <div><b>CATEGORY</b><span>Hoodies</span></div>
         <div><b>INVENTORY</b><span>In-house clearance</span></div>
         <div><b>STATUS</b><span>5 styles live</span></div>
         <div><b>PAYMENT</b><span>USDT</span></div>
       </div>
-      <div class="live-drop-note">Pure solid colors only in this first batch. No printed graphics or patterned styles. Limited quantities and no restock promise.</div>
-      <a class="btn orange" href="/shop/">SHOP SOLID COLOR HOODIES →</a>
+      <div class="live-drop-note">Limited quantities are available while stock lasts. Styles and designs can change as new clearance inventory is added.</div>
+      <a class="btn orange" href="/shop/">SHOP HOODIES →</a>
     </div>
   </div>
 </div>`;
