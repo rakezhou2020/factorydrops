@@ -1,45 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://factorydrops.com/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/about/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/how-it-works/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/seller-standards/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/sell-with-us/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/drops/drop-001/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/stories/footwear-overstock-nike-supply-chain/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/stories/why-factories-produce-extra/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/stories/what-happens-when-orders-are-cancelled/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/stories/broken-size-runs-explained/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/contact/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/privacy/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/terms/</loc>
-  </url>
-  <url>
-    <loc>https://factorydrops.com/disclaimer/</loc>
-  </url>
+<url><loc>https://factorydrops.com/</loc></url>
+<url><loc>https://factorydrops.com/shop/</loc></url>
+<url><loc>https://factorydrops.com/shop/products/classic-white/</loc></url>
+<url><loc>https://factorydrops.com/shop/products/essential-black/</loc></url>
+<url><loc>https://factorydrops.com/shop/products/sky-blue-heavyweight/</loc></url>
+<url><loc>https://factorydrops.com/shop/products/sand-oversized/</loc></url>
+<url><loc>https://factorydrops.com/shop/products/navy-everyday/</loc></url>
+<url><loc>https://factorydrops.com/about/</loc></url>
+<url><loc>https://factorydrops.com/how-it-works/</loc></url>
+<url><loc>https://factorydrops.com/seller-standards/</loc></url>
+<url><loc>https://factorydrops.com/sell-with-us/</loc></url>
+<url><loc>https://factorydrops.com/stories/footwear-overstock-nike-supply-chain/</loc></url>
+<url><loc>https://factorydrops.com/stories/why-factories-produce-extra/</loc></url>
+<url><loc>https://factorydrops.com/stories/what-happens-when-orders-are-cancelled/</loc></url>
+<url><loc>https://factorydrops.com/stories/broken-size-runs-explained/</loc></url>
+<url><loc>https://factorydrops.com/contact/</loc></url>
+<url><loc>https://factorydrops.com/privacy/</loc></url>
+<url><loc>https://factorydrops.com/terms/</loc></url>
+<url><loc>https://factorydrops.com/disclaimer/</loc></url>
 </urlset>
